@@ -60,11 +60,12 @@ link in the clipboard"]
      :visible (cc/nanp-phone-number-p)
      :help "Call phone number"]
 
-    ["Open in Apple Maps" cc/open-region-in-apple-maps
-     :enable (region-active-p)
-     :label (cc/context-menu-label "Open in Apple Maps")
-     :visible (not (cc/nanp-phone-number-p))
-     :help "Open in Apple Maps"]))
+    ;; ["Open in Apple Maps" cc/open-region-in-apple-maps
+    ;;  :enable (region-active-p)
+    ;;  :label (cc/context-menu-label "Open in Apple Maps")
+    ;;  :visible (not (cc/nanp-phone-number-p))
+    ;;  :help "Open in Apple Maps"]
+    ))
 
 (provide 'cc-region-operations-menu)
 ;;; cc-region-operations-menu.el ends here

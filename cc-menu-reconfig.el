@@ -27,12 +27,11 @@
 (require 'cc-style-text-menu)
 (require 'text-mode)
 (require 'vc)
-(require 'helm)
 (require 'dired)
 (require 'transpose-frame)
 (require 'cc-region-operations-menu)
 (require 'cc-edit-text-menu)
-(require 'cc-truth-table)
+;; (require 'cc-truth-table)
 
 (defun cc/dired-side-right (path)
   "Side-by-side layout with Dired buffer on the right set to PATH."
@@ -124,7 +123,8 @@ for REGEXP."
 
 (easy-menu-add-item global-map '(menu-bar tools)
                     ["Find File…"
-                     helm-find-files
+                     ;; helm-find-files
+                     find-name-dired
                      :help "Fuzzy find file."]
                     "Shell Commands")
 
@@ -137,7 +137,8 @@ tree rooted at DIR."]
 
 (easy-menu-add-item global-map '(menu-bar tools)
                     ["Search Org Notes…"
-                     cc/org-search
+                     ;; cc/org-search
+                     +default/org-notes-search
                      :help "Search Org Notes in ~/org."]
                     "Shell Commands")
 
@@ -145,7 +146,7 @@ tree rooted at DIR."]
                     ["IELM"
                      ielm
                      :help "Interactively evaluate Emacs Lisp expressions."]
-                     "Language Server Support (Eglot)")
+                    "Language Server Support (Eglot)")
 
 (keymap-set-after (lookup-key global-map [menu-bar tools])
   "<separator-shell>"
@@ -207,12 +208,12 @@ in a buffer"]
                      :help "Side-by-side layout with Dired buffer on the right set to PATH."]
                     "Calendar")
 
-(easy-menu-add-item global-map '(menu-bar tools)
-                    ["Insert Truth Table…"
-                     cc/insert-truth-table-input
-                     :visible (not buffer-read-only)
-                     :help "Insert truth table input with 2^BITS rows into current buffer."]
-                    "Calendar")
+;; (easy-menu-add-item global-map '(menu-bar tools)
+;;                     ["Insert Truth Table…"
+;;                      cc/insert-truth-table-input
+;;                      :visible (not buffer-read-only)
+;;                      :help "Insert truth table input with 2^BITS rows into current buffer."]
+;;                     "Calendar")
 
 (easy-menu-add-item global-map '(menu-bar tools)
                     ["RE-Builder"

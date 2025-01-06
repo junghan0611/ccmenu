@@ -59,7 +59,7 @@ This function will also test if a diff should apply to the current buffer."
     (if (and (buffer-modified-p)
 	     (y-or-n-p (format "Buffer %s is modified.  Save buffer? "
                                (buffer-name))))
-      (save-buffer (current-buffer)))
+        (save-buffer (current-buffer)))
     (message buffer-file-name)
     (cc/ediff-revision-actual))
 

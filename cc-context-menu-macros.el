@@ -34,27 +34,27 @@
   "Add COMMAND to MENU annotated with LABEL and property HELP."
   `(define-key-after ,menu [,command]
      '(menu-item ,label ,command
-                 :help ,help)))
+       :help ,help)))
 
 (defmacro cc/add-context-menu-item-visible (menu command label help visible)
   "Add COMMAND to MENU annotated with LABEL and properties HELP, VISIBLE."
   `(define-key-after ,menu [,command]
      '(menu-item ,label ,command
-                 :help ,help
-                 :visible ,visible)))
+       :help ,help
+       :visible ,visible)))
 
 (defmacro cc/add-context-menu-item-enable (menu command label help enable)
   "Add COMMAND to MENU annotated with LABEL and properties HELP, ENABLE."
   `(define-key-after ,menu [,command]
      '(menu-item ,label ,command
-                 :help ,help
-                 :enable ,enable)))
+       :help ,help
+       :enable ,enable)))
 
 (defmacro cc/add-first-context-menu-item (menu command label help)
   "Add first COMMAND to MENU annotated with LABEL and HELP."
   `(define-key ,menu [,command]
-     '(menu-item ,label ,command
-                 :help ,help)))
+    '(menu-item ,label ,command
+      :help ,help)))
 
 (defmacro cc/add-context-menu-submenu (menu submenu label)
   "Add SUBMENU to MENU annotated with LABEL.
@@ -65,10 +65,10 @@ SUBMENU is a keymap."
 (defun cc/context-menu-label (prefix)
   "Generate context menu label with region string prepended by PREFIX."
   (let* ((start (region-beginning))
-        (end (region-end))
-        (buf "")
-        (max 25)
-        (size (abs (- start end))))
+         (end (region-end))
+         (buf "")
+         (max 25)
+         (size (abs (- start end))))
     (if (> size max)
         (setq buf (concat prefix " “"(buffer-substring start (+ max start)) "…”"))
       (setq buf (concat prefix " “" (buffer-substring start end) "”")))
@@ -77,9 +77,9 @@ SUBMENU is a keymap."
 (defun cc/context-menu-last-word-in-region (prefix)
   "Generate context menu label with last word in region prepended by PREFIX."
   (let*  ((start (region-beginning))
-         (end (region-end))
-         (buf (buffer-substring start end))
-         (last-word (car (last (split-string buf " ")))))
+          (end (region-end))
+          (buf (buffer-substring start end))
+          (last-word (car (last (split-string buf " ")))))
     (concat prefix " “" last-word "”")))
 
 (defun cc/org-stored-links-p ()
