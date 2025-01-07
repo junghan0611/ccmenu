@@ -100,38 +100,36 @@ Commands pertaining to project operations can be accessed here."
   (transient-append-suffix 'casual-editkit-main-tmenu "C"
     '("!" "Shell Command…" shell-command))
 
-  (transient-append-suffix 'casual-editkit-main-tmenu "!"
-    '("<f1>" "Dismiss"
-      transient-quit-one))
-
   ;; 2024-12-22 Add more Dismiss Key
   (transient-append-suffix 'casual-editkit-main-tmenu "!"
-    '("q" "Dismiss"
-      transient-quit-one))
+    '("q" "C-g" transient-quit-one))
+
+  (transient-append-suffix 'casual-editkit-main-tmenu "C-g"
+    '("<f1>" "C-g" transient-quit-one))
 
   ;; modify `casual-editkit-tools-tmenu'
   ;; (transient-append-suffix 'casual-editkit-tools-tmenu "w"
   ;;   '("P" "Password›" password-store-menu))
 
-  (transient-append-suffix 'casual-editkit-tools-tmenu "M-e"
-    '("C-p" "Call" cc/call-nanp-phone-number
-      :inapt-if-not use-region-p))
+  ;; (transient-append-suffix 'casual-editkit-tools-tmenu "M-e"
+  ;;   '("C-p" "Call" cc/call-nanp-phone-number
+  ;;     :inapt-if-not use-region-p))
 
   ;; (transient-append-suffix 'casual-editkit-tools-tmenu "C-p"
   ;;   '("m" "Maps" cc/open-region-in-apple-maps
   ;;     :inapt-if-not use-region-p))
 
-  (transient-append-suffix 'casual-editkit-tools-tmenu "m"
-    '("M-s" "Say" cc/say-region
-      :inapt-if-not use-region-p))
+  ;; (transient-append-suffix 'casual-editkit-tools-tmenu "m"
+  ;;   '("M-s" "Say" cc/say-region
+  ;;     :inapt-if-not use-region-p))
 
-  (transient-append-suffix 'casual-editkit-tools-tmenu "M-s"
-    '("M-t" "Translate" google-translate-smooth-translate
-      :inapt-if-not use-region-p))
+  ;; (transient-append-suffix 'casual-editkit-tools-tmenu "M-s"
+  ;;   '("M-t" "Translate" google-translate-smooth-translate
+  ;;     :inapt-if-not use-region-p))
 
-  (transient-append-suffix 'casual-editkit-tools-tmenu "M-t"
-    '("M-p" "Webpaste" webpaste-paste-region
-      :inapt-if-not use-region-p))
+  ;; (transient-append-suffix 'casual-editkit-tools-tmenu "M-t"
+  ;;   '("M-p" "Webpaste" webpaste-paste-region
+  ;;     :inapt-if-not use-region-p))
 
   ;; (transient-append-suffix 'casual-editkit-tools-tmenu "z"
   ;;   '("F" "Fireplace" fireplace))

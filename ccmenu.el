@@ -68,7 +68,6 @@
 ;;; transient : casual-suite
 
 (when (locate-library "casual-suite")
-
   (setq transient-align-variable-pitch t)
 
   (require 'casual-suite)
