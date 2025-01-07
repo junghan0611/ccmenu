@@ -34,10 +34,10 @@
      :enable (region-active-p)
      :help "Write current region into specified file."]
 
-    ["Search with Google" google-this-noconfirm
-     :enable (region-active-p)
-     :label (cc/context-menu-label "Search with Google")
-     :help "Search Google with selected region"]
+    ;; ["Search with Google" google-this-noconfirm
+    ;;  :enable (region-active-p)
+    ;;  :label (cc/context-menu-label "Search with Google")
+    ;;  :help "Search Google with selected region"]
 
     ["Translate" google-translate-smooth-translate
      :enable (region-active-p)

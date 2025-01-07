@@ -97,13 +97,17 @@ Commands pertaining to project operations can be accessed here."
       (lambda () (interactive)(set-input-method 'korean-hangul))
       :transient nil))
 
-  ;; 2024-12-22 Add more Dismiss Key
-  (transient-append-suffix 'casual-editkit-main-tmenu "C-g"
-    '("q" "Dismiss"
-      transient-quit-one))
-
   (transient-append-suffix 'casual-editkit-main-tmenu "C"
     '("!" "Shell Command…" shell-command))
+
+  (transient-append-suffix 'casual-editkit-main-tmenu "!"
+    '("<f1>" "Dismiss"
+      transient-quit-one))
+
+  ;; 2024-12-22 Add more Dismiss Key
+  (transient-append-suffix 'casual-editkit-main-tmenu "!"
+    '("q" "Dismiss"
+      transient-quit-one))
 
   ;; modify `casual-editkit-tools-tmenu'
   ;; (transient-append-suffix 'casual-editkit-tools-tmenu "w"

@@ -35,7 +35,7 @@
 ;; (require 'org-ql-view)
 (require 'calc)
 (require 'project)
-(require 'ace-window)
+;; (require 'ace-window)
 (require 'which-func)
 (require 'casual-lib)
 
