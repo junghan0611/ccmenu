@@ -109,8 +109,7 @@
   (keymap-set reb-lisp-mode-map "C-;" #'casual-re-builder-tmenu)
 
 ; 'M-a' backward-sentence -> '(' evil-backward-sentence-begin
-  (keymap-global-set "M-a" #'casual-avy-tmenu)
-  ;; M-e ews-denote-map
+  ;; (keymap-global-set "M-a" #'casual-avy-tmenu)
 
   (keymap-set bookmark-bmenu-mode-map "<f2>" #'casual-bookmarks-tmenu)
   (keymap-set bookmark-bmenu-mode-map "C-;" #'casual-bookmarks-tmenu)

@@ -111,6 +111,11 @@ A new frame will be created if `pop-up-frames' is t."
   (shell-command "open ~/Documents/Dictation.txt"))
 
 ;; (load-file (concat user-emacs-directory "url-bookmarks.el"))
+;; (defvar cc/url-bookmarks
+;;   '(("Google" . "https://www.google.com")
+;;     ("GitHub" . "https://github.com")
+;;     ("Emacs Home" . "https://www.gnu.org/software/emacs/")
+;;     ))
 
 (defun cc/open-url ()
   "Open URL from file `cc/url-bookmarks'."
